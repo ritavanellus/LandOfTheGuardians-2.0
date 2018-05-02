@@ -75,7 +75,7 @@ function setAsStart() {
 }
 
 function findAndShowRoute() {
-	$.getJSON("jsons/test_All_smooth5.json", function (jsonData) {
+	$.getJSON("jsons/test_All.json", function (jsonData) {
 		document.getElementById("alternatives").style.display = "none";
 		if (startID === "" || selectedID === "") {
 			alert("Für die Wegberechnung, bitte wählen Sie zwei Punkte auf die Karte aus!");
@@ -169,7 +169,7 @@ können Sie den Schwellenwert senken, oder zuerst ein Zwischenpunkt bevor dem de
 }
 
 function showPrevRoute() {
-	$.getJSON("jsons/test_All_smooth5.json", function (jsonData) {
+	$.getJSON("jsons/test_All.json", function (jsonData) {
 		actRouteIndex--;
 		actualRoute = {};
 		routeToShow = [];
@@ -224,7 +224,7 @@ function showNextRoute() {
 		return;
 	}
 
-	$.getJSON("jsons/test_All_smooth5.json", function (jsonData) {
+	$.getJSON("jsons/test_All.json", function (jsonData) {
 		actRouteIndex++;
 		actualRoute = {};
 		routeToShow = [];
@@ -314,7 +314,7 @@ function addToTotalRoute() {
 
 	deleteTrace(false);
 
-	$.getJSON("jsons/test_All_smooth5.json", function (jsonData) {
+	$.getJSON("jsons/test_All.json", function (jsonData) {
 		showTrace(totalRoute, jsonData, true);
 
 		if (showTotalActive) {
@@ -374,7 +374,7 @@ function refreshDisplay() {
 		showTotalActive = true;
 	}
 
-	$.getJSON("jsons/test_All_smooth5.json", function (jsonData) {
+	$.getJSON("jsons/test_All.json", function (jsonData) {
 		routeToShow = [];
 		//Hook: if total path needs to be shown, it needs to be added to routeToShow here.
 		if (showTotalActive) {
@@ -432,7 +432,7 @@ function deleteUntilThis() {
 	}
 
 	//display needs to be updated too
-	$.getJSON("jsons/test_All_smooth5.json", function (jsonData) {
+	$.getJSON("jsons/test_All.json", function (jsonData) {
 		routeToShow = [];
 		if (showTotalActive) {
 			showTrace(totalRoute, jsonData, true);

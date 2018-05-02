@@ -15,7 +15,7 @@ and open the template in the editor.
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 		<script src="https://code.highcharts.com/highcharts.js"></script>
 		<script src="https://code.highcharts.com/modules/exporting.js"></script>
-		<script src="https://code.highcharts.com/modules/boost.js"></script>				
+		<!-- <script src="https://code.highcharts.com/modules/boost.js"></script> -->				
 	</head>
 	<body>
 		<div class="jumbotron-Eagles">
@@ -106,7 +106,7 @@ and open the template in the editor.
 
 
 					//displaying the node points
-					$.getJSON("jsons/test_All_smooth5.json", function (jsonData) {
+					$.getJSON("jsons/test_All.json", function (jsonData) {
 						for (section in jsonData) {
 							var start = section.substring(0, 3);
 							if (allWayPoints[start] === undefined) {
@@ -202,8 +202,10 @@ and open the template in the editor.
 						<input type="radio" name="infoSelector" class="largerRadios" value="total" onclick="refreshDisplay()" checked > gesamte
 						Strecke an						
 					</form>					
-
-					<button class="buttonBasic" style="margin-left: 100px;">KML herunterladen</button>					
+					<form id="kmlDownloader" action="kmlStitcher">
+						<input type="hidden" name="path" id="pathArray"/>
+						<button type="submit" value="submit" onclick="checkAndSubmit()" class="buttonBasic" style="margin-left: 100px;">KML herunterladen</button>
+					</form>					
 				</div>
 			</div>
 

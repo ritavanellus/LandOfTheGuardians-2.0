@@ -57,3 +57,13 @@ function giveSummedEle(edgeArray, data) {
 	}
 	return summedEle;
 }
+
+function checkAndSubmit() {
+	if (totalRoute.length === 0) {
+		alert("Noch keine Route aufgebaut");
+	} else {
+		document.getElementById("pathArray").value = totalRoute;
+		var form = document.getElementsById("kmlDownloader");
+		form.submit();
+	}
+}

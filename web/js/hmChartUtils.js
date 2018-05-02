@@ -71,10 +71,10 @@ function plotChart (edgeArray, summedData, data) {
 			panning: true,
 			panKey: 'shift'
 		},
-		boost: {
-			enabled: false /*,
-			useGPUTranslations: true*/
-		},
+		/*boost: {
+			enabled: false ,
+			useGPUTranslations: true
+		},*/
 		title: {
 			text: data[edgeArray[0]].startPoint + " - " + data[edgeArray[edgeArray.length - 1]].endPoint
 		},
@@ -103,7 +103,7 @@ function plotChart (edgeArray, summedData, data) {
 		},
 		series: [{
 				/*boostThreshold: 500,*/
-				turboThreshold: 50000,
+				/*turboThreshold: 50000,*/
 				name: "summed Route",
 				data: summedData,
 				color: "rgb(0,72,81)",
