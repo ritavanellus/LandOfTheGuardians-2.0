@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="css/accordionStyle.css" rel="stylesheet" type="text/css"/>
+		<title>Orseg Routenplaner - Infos</title>	
+	</head>
+	<body>
+		<div class="jumbotron-Eagles">
+			<h2 class="header-title">Entdecken Sie die Őrség, und bauen Sie Ihre eigene Fahrradtour auf! </h2>
+			<img src="images/Header.png" alt="header" class="header"/>
+		</div>
+		<!-- NavBar here -->
+		<div>
+			<ul class="navbar">
+				<li class="navbar-button">
+					<a class="notLink" href="index.html">
+						Start
+					</a>
+				</li>
+				<li class="navbar-button">
+					<a class="notLink" href="routePlanner.html">
+						Routenplaner
+					</a>									
+				</li>
+				<li class="navbar-button">
+					<a class="notLink" href="gallery.html">
+						Bildgalerie
+					</a>
+				</li>
+				<li class="navbar-active navbar-button">
+					<a class="notLink">Nutzbare Infos</a>					
+				</li>
+				<li class="navbar-button">
+					<a class="notLink" href="contact.html">
+						Kontakt
+					</a>					
+				</li>
+				<li>
+					<form class="languageSelector">
+						<label for="language" id="languageLabel"> Sprachauswahl: </label>
+						<script src="js/languageUtils.js" type="text/javascript"></script>
+						<select name="language" id="language" onchange="setLanguage()">
+							<option value="german">Deutsch</option>
+							<option value="hungarian">Magyar</option>							
+						</select>						
+					</form>
+				</li>
+
+			</ul>
+		</div>
+		<!-- End of the NavBar, content comes here -->	
+
+		<!-- TODO: write missing content -->
+		<div id="container" >
+			<h2 style="color: rgb(0,72,81); font-family: arial;"> Bitte clicken Sie an die Themen, um die Details anzuschauen! </h2> 
+			<button class="accordion"> 
+				<img src="images/accordion_icons/icon_anreise.png" alt="train" width="45" style="margin-right:10px;margin-left: 10px;"/>
+				Anreise</button>
+			<div class="panel">
+				<p>
+					Für denen, die mit dem Zug kommen, ist der Stadt von Szentgotthard ein idealer Ausgangspunkt, da sie mit der Bahn gut erreichbar ist.
+					Es gibt eine direkte Zugverbindung von/nach Graz, Personenzüge fahren ungefähr in jeder zweiten Stunde ab.
+					Auf der Ungarische Seite fahren Personenzüge in cca jeder Stunde nach/von Szombathely ab. 	<br/>	
+					<br/>
+					Webseite der Östereichischen Bundesbahnen (ÖBB): <br/>
+					<a href="https://www.oebb.at" target="_blank">www.oebb.at </a><br/>
+
+					Webseite der Ungarischen Bundesbahnen (MAV):<br/>
+					<a href="https://www.mavcsoport.hu/de" target="_blank">www.mavcsoport.hu/de </a><br/>
+
+					Zeitplan aller öffentlichen Verkehrsmittel in Ungarn: <br/>
+					<a href="https://menetrendek.hu/" target="_blank"> www.menetrendek.hu </a> <br/>
+				</p>
+			</div>
+
+			<button class="accordion">
+				<img src="images/accordion_icons/icon_unterkunft.png" alt="hotel" width="40" style="margin-right:10px;margin-left: 10px;"/>
+				Unterkunft</button>
+			<div class="panel">
+				<p>
+					In der Orseg gibt es viele verschiedene Unterkünfte: Hotels, Pensionen, Bauernhäuser und Campings. 
+					Die Werbung konkreter Unterkünfte ist nicht das Ziel dieser Seite, aber mithilfe der folgenden Links kann jeder 
+					einen für ihn/sie passenden Unterkunft finden. <br/>
+					<a href="https://www.booking.com/searchresults.de.html?label=opensearch-plugin;sid=2c36a62a30bb07e5f45965398247a8f3;class_interval=1;dest_id=6328;dest_type=region;dtdisc=0;inac=0;index_postcard=0;label_click=undef;offset=0;postcard=0;qrhpp=58c65e51c13185eaae9b219c3e4b7dae-region-0;room1=A%2CA;sb_price_type=total;search_selected=0;si=ai%2Cco%2Cci%2Cre%2Cdi;ss=orseg;ss_all=0;ssb=empty;sshis=0;srpos=1;origin=search"
+					   target="_blank"> www.booking.com </a> <br/>
+					<a href="https://de.revngo.com/orseg" target="_blank"> www.szallas.hu </a> <br/>
+
+				</p>
+			</div>
+
+			<button class="accordion">
+				<img src="images/accordion_icons/icon_traffic.png" alt="traffic" width="40" style="margin-right:10px;margin-left: 10px;"/>
+				Verkehr und Grenzenübertritt</button>
+			<div class="panel">
+				<p>
+					<b> Befahrbarkeit: </b>Außer den Hauptlandesstrassen sind die Asphaltwege dieser Region verkehrsarm und sehr ruhig. Diese Ruhe soll aber
+					niemanden irreführen - bitte immer mit der Möglichkeit eines kommenden Autos rechnen! Die Forstwege sind beim trockenen Wetter gut
+					befahrbar und im Prinzip verkehrsfrei. Für diese Wege sind Tourenfahrräder oder Mountain Bikes empfohlen. Rennradfahrern sollen 
+					beim Wegberechnung und Routenaufbau die Option "nur Asphaltwege suchen" benutzen. 
+				</p>
+				<p>
+					<b> Verkehrsregeln: </b>Beim Dunkel und beim schlechten Sichtweiten sind Fahrradlichten und Rückstrahlen erforderlich. 
+					Nach der Ungarischen Strassenverkerhsordnung ist es erforderlich, beim schlechten Sichtweiten (Dunkel, schlechtes Wetter) ausser der Wohngebieten Farhrrad fahrend 
+					eine Warnkleidung (Warnweste) zu tragen. In Ungarn gibt es sowohl beim Auto- als auch beim Radfahren eine Zero-Toleranz bezüglich 
+					Alkoholverzehr. 
+				</p>
+				<p>
+					<b> Grenzenübertritt: </b> Da die Region näh zu der Österreichischen und der Slowenischen Grenze liegt, sind Grenzenübertritten bei diesen Fahrradtouren sehr üblich. 
+					Obwohl die Grenzen frei übertreten werden können, sollen die Touristinnen für eine Grenzkontroll immer bereit sein - 
+					bei der Möglichkeit einer Grenzenübertritt nehmen Sie immer ein Lichtbildausweis mit!
+
+				</p>
+			</div>
+			<button class="accordion">
+				<img src="images/accordion_icons/icon_laden.png" alt="shop" width="40" style="margin-right:10px;margin-left: 10px;"/>
+				Läden und Banken </button>
+			<div class="panel">
+				<p>
+					<b> Läden: </b> In der Städte und größere Dörfer wie Szentgotthard, Oriszentpeter oder Bajansenye findet man verschiedene Lebensmittelläden.  
+					Im Gegenteil sind diese in den Dörfer sehr klein und die Öffnungszeiten können kurz und unregelmäßig sein. Es ist immer eine gute
+					Idee, in den Städten genug Lebensmittel aufzutanken. Bars mit Getränke und Snacks sind auch in jedem Dorf zu finden. <br/>
+					In Oriszentpeter gibt es jedem Samstag einen Bauernmarkt, wo man heimische Lebensmittel (Käse, Obst, Kürbiskernöl) kaufen kann.
+					Diese kann man oft auch in den Bauernhöfen kaufen (suchen Sie Schilder wie "Sajt" (Käse), "Kecskesajt" (Ziegenkäse), "Mez" (Honig) und 
+					"Tökmagolaj" (Kürbiskernöl) und kehren Sie ein!). 
+					<b> Banken: </b> Ählich wie die Läden, findet man Banken und ATM nur in den größeren Dörfer und in den Städten.
+					Bitte achten Sie darauf, dass man in den kleinen Dörfer meistens nur in Bar (in ungarischem Forint) zahlen kann.					
+			</div>
+			<button class="accordion">
+				<img src="images/accordion_icons/icon_doctor.png" alt="healthcare" width="40" style="margin-right:10px;margin-left: 10px;"/>
+				Ärzte</button>
+			<div class="panel">
+				<p>
+					In Szentgotthard, Oriszentpeter, Körmend, Szombathely, und Zalaegerszeg sind medizinische Versorgung zu finden. 
+					Im Notfall rufen Sie (+36-) 112 oder direkt die Nummer der Rettung (+36-) 104 an!
+				</p>
+			</div>
+			<button class="accordion">
+				<img src="images/accordion_icons/icon_phone.png" alt="phone" width="40" style="margin-right:10px;margin-left: 10px;"/>
+				Wichtige Telefonnummern</button>
+			<div class="panel">
+				<p>
+					Vorwahl der Länder: Ungarn: +36, Slowenien: +386, Österreich: +43. <br/>
+					Allgemeine Notfallnummer: (+36-) 112 <br/>
+					Rettung: (+36-) 104 <br/>
+					Polizei: (+36-) 107 <br/>
+					Feuerwehr: (+36-) 105 <br/>
+					Allgemeine Information: (+36-) 119 <br/>
+				</p>
+			</div>
+			<button class="accordion">
+				<img src="images/accordion_icons/icon_nature.png" alt="nature" width="40" style="margin-right:10px;margin-left: 10px;"/>
+				Naturschutz</button>
+			<div class="panel">
+				<p>
+					Seit 2002 ist die Orseg Teil des Orseg Nationalparks. Für die Gäste, die auch gern wandern, gibt es verschiedene thematische Wanderwege
+					mit Schilder, die über die naturellen und historischen Werten der Region informieren. Auch geführte Touren sind von den MItarbeitern des
+					Nationalparks organisiert. Die Naturschutzgebiete sind von einem weissen Schild mit einem Reiher darauf geschildert: in diesem darf man 
+					keine Pflanze oder Pilze sammeln und kein Tier stören oder töten. Die sammeln oder stören/töten der von Landesgesetz geschützte Arten sind 
+					überall verboten und strafbar. 					
+				</p>
+				Webseite des Orseg Nationalparks: <br/>
+				<a href="http://www.orseginemzetipark.hu/de/info/unsere-werte/geschutzte-gebiete/der-nationalpark-orseg.html"
+				   target="_blank"> www.orseginemzetipark.hu </a>
+			</div>
+
+		</div>
+		<script>
+			var acc = document.getElementsByClassName("accordion");
+			var i;
+
+			for (i = 0; i < acc.length; i++) {
+				acc[i].addEventListener("click", function () {
+					this.classList.toggle("active");
+					var panel = this.nextElementSibling;
+					if (panel.style.maxHeight) {
+						panel.style.maxHeight = null;
+					} else {
+						panel.style.maxHeight = panel.scrollHeight + "px";
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

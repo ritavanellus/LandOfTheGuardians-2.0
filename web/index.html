@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<title>Orseg Routenplaner - Willkommen</title>		
+	</head>
+	<body>		
+		<div class="jumbotron-Eagles">
+			<h2 class="header-title">Entdecken Sie die Őrség, und bauen Sie Ihre eigene Fahrradtour auf! </h2>
+			<img src="images/Header.png" alt="header" class="header"/>
+
+		</div>
+		<!-- NavBar here -->
+		<div>
+			<ul class="navbar">
+				<li class="navbar-active navbar-button">
+					<a class="notLink">Start</a>					
+				</li>
+				<li class="navbar-button">
+					<a class="notLink" href="routePlanner.html">
+						Routenplaner
+					</a>									
+				</li>
+				<li class="navbar-button">
+					<a class="notLink" href="gallery.html">
+						Bildgalerie
+					</a>
+				</li>
+				<li class="navbar-button">
+					<a class="notLink" href="infos.html">
+						Nutzbare Infos
+					</a>					
+				</li>
+				<li class="navbar-button">
+					<a class="notLink" href="contact.html">
+						Kontakt
+					</a>					
+				</li>
+				<li>
+					<form class="languageSelector">
+						<label for="language" id="languageLabel"> Sprachauswahl: </label>
+						<script src="js/languageUtils.js" type="text/javascript"></script>
+						<select name="language" id="language" onchange="setLanguage()">
+							<option value="german">Deutsch</option>
+							<option value="hungarian">Magyar</option>							
+						</select>						
+					</form>
+				</li>
+			</ul>
+		</div>
+
+		<div class="indexPage">
+			<div class="indexTextBox">
+				<h2>
+					Liebe Besucherinnen!
+				</h2>
+				<hr/>
+				<!-- TODO: Add links to the other pages in the text! -->
+				<p>
+					Willkommen in der Orseg, Ungarn! In dieser Region warten nicht nur ruhige Radwege mit vielen Wälder und milden Hügel, 
+					aber auch viele Sehenswürdigkeiten auf Sie. Das Ziel dieser Seite ist, Sie bei der Entdeckung der Region
+					und bei der Planung Ihrer Fahrradtour zu helfen. </p>
+				<h4>Die Sehenswürdigkeiten und die Wege entdecken</h4>
+				<p> 
+					Die Sehenswürdigkeiten können Sie sowohl auf der <a href="routePlanner.html">Routenplaner Karte,</a>  
+					als auch in der <a href="gallery.html">Bildgalerie </a>  anschauen. Möchten Sie auch die mögliche Routen anschauen? 
+					Markieren Sie zwei Punkte auf der <a href="routePlanner.html">Karte  </a> und schauen Sie die Länge, Anstieg, Spur 
+					und den Höhenmeterquerschnitt der angebotenen Routen an. Ob Sie Asphaltwege oder Forstwege bevorzugen, oder nicht 
+					unbedingt den kürzesten Weg nehmen wollen, können Sie die Einstellungen der Wegsuche nach Ihrem Bedarf modifizieren. 
+				</p>	
+				<h4>Ihre eigene Fahrradtour kreativ und flexibel aufbauen</h4>
+				<p>
+					Haben Sie schon eine Idee, wohin und wie lang Ihre Tour geht, können Sie in der <a href="routePlanner.html">Routenplaner </a>  
+					den Routeaufbau aktivieren, und Strecke zu Strecke auch einen längeren Route aufbauen. 
+					Die Spur und den Höhenmeterquerschnitt können Sie auch für die gesamte Route sehen. Wenn Sie ein Navogationsgerät 
+					oder ein Smartphone haben, können Sie die aufgebaute Route in ".kml" Format herunterladen und in GoogleMaps oder
+					in anderen Navigationssoftware importieren. Dadurch können Sie die aufgebaute Route auch zum Ort mitnehmen und beim
+					real-time Navigation benutzen. 
+				</p>
+				<h4>Wünsche? Kommentare? Ich höre auf Sie!</h4>
+				<p>
+					Haben Sie eine Bemerkung, Vorschlag, oder wüschen Sie die Zugabe einer bestimmten Strecke? Bitte halten Sie Ihre Meinung
+					nicht zurück! Durch den <a href="contact.html"> Kontaktformular</a> können Sie es für mich schreiben. 
+					So bald wie möglich bekommen Sie eine Antwort. 
+				</p>
+				<img src="images/me_webmaster.jpg" alt="webmaster" id="webmaster"  />
+				<p>
+
+					Ich wüsche Ihnen eine schöne und Abenteuerreiche Reise!	<br/>
+					Rita Papp - Webmaster
+				</p>			
+			</div>
+			<div class="indexTextBox">
+				<h2>
+					News
+				</h2>
+				<hr/>
+				<h4>
+					Neue Strecken kommen!
+				</h4>
+				<p>
+					Neue Strecken, die die Region Salovci, Bajansenye und Oriszentpeter abdecken, werden noch diese Woche zum 
+					Routennetzwerk zugegeben. Interesse? Dann schauen Sie am Ende dieser Woche nochmals vorbei!
+				</p>
+				<br/>
+				<h4>
+					Neueröffnung des Apat Hotel und Restaurant in Apatistvanfalva
+				</h4>
+				<p>
+					Von neuen Besitzerinnen hat die Hotel Apat in Apatistvanfalva, im Herzen der Region, neu geöffnet. 
+					Bequeme Zimmern und Fahrradverleih warten auf die Besucherinnen. Im Restaurant können sowohl die Hotelgäste 
+					als auch andere hungrigen Radfahrerinnen köstliche, auf heimischen Zutaten gemachte Speisen und Getränke genießen. 
+				</p>
+			</div>
+		</div>
+
+
+	</body>
+</html>

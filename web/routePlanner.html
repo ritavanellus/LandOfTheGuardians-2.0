@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Orseg Routenplaner</title>
+		<link href="css/simplegrid.css" rel="stylesheet" type="text/css"/>
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Graduate" rel="stylesheet">	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/boost.js"></script>				
+	</head>
+	<body>
+		<div class="jumbotron-Eagles">
+			<h2 class="header-title">Entdecken Sie die Őrség, und bauen Sie Ihre eigene Fahrradtour auf! </h2>
+			<img src="images/Header.png" alt="header" class="header"/>
+		</div>
+		<!-- NavBar here -->
+		<div>
+			<ul class="navbar">
+				<li class="navbar-button">
+					<a class="notLink" href="index.html">
+						Start
+					</a>					
+				</li>
+				<li class="navbar-active navbar-button">
+					<a class="notLink">	Routenplaner</a>									
+				</li>
+				<li class="navbar-button">
+					<a class="notLink" href="gallery.html">
+						Bildgalerie
+					</a>
+				</li>
+				<li class="navbar-button">
+					<a class="notLink" href="infos.html">
+						Nutzbare Infos
+					</a>					
+				</li>
+				<li class="navbar-button">
+					<a class="notLink" href="contact.html">
+						Kontakt
+					</a>					
+				</li>
+				<li>
+					<form class="languageSelector">
+						<label for="language" id="languageLabel"> Sprachauswahl: </label>
+						<select name="language" id="language" onchange="setLanguage()">
+							<option value="german">Deutsch</option>
+							<option value="hungarian">Magyar</option>							
+						</select>						
+					</form>
+				</li>
+			</ul>
+		</div>
+
+		<!-- here comes the page content-->
+
+		<div class="grid grid-pad">
+			<div id="map" class="col-1-2" ></div>
+			<script>
+				var map;
+				//to initiate node points
+				var allWayPoints = {};
+				var aNode;
+				//variables for route calculation
+				var startID = "";
+				var selectedID = "";
+
+				var routeBildActive = false;
+				var showTotalActive = true;
+				var routeAddEnabled = true;
+
+				var multipleWays = [];
+				var actRouteIndex = 0;
+				var actualRoute = {}; //this is a route object with edges[] and dist value
+				var routeToShow = []; //this is the edge array given to the panel/chart etc functions
+				var activePolyLine = [];
+				var activeTotalPolyline = [];
+				var totalRoute = [];
+				var rtsWithTotal = false;
+
+
+				function initMap() {
+					map = new google.maps.Map(document.getElementById('map'), {
+						center: {lat: 46.86911, lng: 16.35692},
+						zoom: 10
+					});
+
+					var nodeImg = {
+						url: 'images/mapIcons/icon_nodeNormal.png',
+						// This marker is 20 pixels wide by 32 pixels high.
+						size: new google.maps.Size(20, 32),
+						// The origin for this image is (0, 0).
+						origin: new google.maps.Point(0, 0),
+						// The anchor for this image is the base of the flagpole at (0, 32).
+						anchor: new google.maps.Point(7, 10),
+						scaledSize: new google.maps.Size(20, 20)
+					};
+
+
+					//displaying the node points
+					$.getJSON("jsons/test_All_smooth5.json", function (jsonData) {
+						for (section in jsonData) {
+							var start = section.substring(0, 3);
+							if (allWayPoints[start] === undefined) {
+								aNode = new google.maps.Marker({
+									position: jsonData[section]["polyLine"][0],
+									map: map,
+									icon: nodeImg,
+									scale: 5,
+									title: start,
+									visible: true
+								});
+
+								addCorrectListener(aNode, start);
+								allWayPoints[start] = aNode;
+							}
+						}
+
+						function addCorrectListener(node, nodeID) {
+							node.addListener('click', function () {
+								setSelected(nodeID);
+							});
+						}
+
+					});
+
+					createAllPlaceMarkers();
+
+				}
+
+
+			</script>
+			<script async defer 
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoEj6ZiUCuVOPPef4m-jxllM6605azrCo&callback=initMap">
+
+			</script>
+			<script src="js/mapMarkers.js" type="text/javascript"></script>
+			<div class="col-1-2 controlPanel">
+				<div class="myH1">Routenplaner</div>
+				<hr/>
+				<div class="container">
+					<div>
+						<button id="asStart" class="buttonBasic" onclick="setAsStart()" style="margin-top: 0px;">Startpunkt</button> 
+						<br/> 					
+						<button id="findRoute" class=" buttonBasic" onclick="findAndShowRoute()">Weg finden</button> 					
+					</div>
+					<div style="margin-top: 10px;">
+						<label for="threshold">Berechne kürzeste Weg + maximum </label>
+						<input type="number" id="threshold" class="largerNumberInput" min="0" max="50" 
+							   step="1" value="10" onclick="select()"/>
+						<label> km </label><br/>
+						<br/>
+						<input type="checkbox" id="asphalt" class="largerCheckbox"/>
+						<label for="asphalt">Nur Asphaltwege suchen </label>
+						<button id="buildActive" class=" buttonBasic" style="margin-left: 20px;" onclick="toggleRouteBuild()">
+							Routeaufbau einschalten</button> 
+					</div>	
+				</div>
+
+				<div id="alternatives" style="display: none;"> 
+					<hr/>
+					<span id="altActualPerTotal" style="margin-left: 10px;"> </span>
+					<button id="showPrevRoute" class=" buttonBasic" style="margin-left: 20px;" onclick="showPrevRoute()">
+						<<
+					</button> 
+					<button id="showNextRoute" class=" buttonBasic" style="margin-left: 20px;" onclick="showNextRoute()">
+						>>
+					</button> 
+
+				</div>
+				<div id="routeInfo" style="font-family:'Graduate'; font-weight: bold; font-size:28px;">
+					<hr/>
+					Startpunkt: <label id="start" style="font-weight: normal;"> - </label>
+					<br/>
+					Endpunkt: <label id="end" style="font-weight: normal;"> - </label>	
+					<br/>
+					Lange: <label id="length" style="font-weight: normal;"> - </label>
+					<br/>
+					Davon Asphalt: <label id="asphaltLength" style="font-weight: normal;"> - </label>
+					<br/>
+					Anstieg: <label id="anstieg" style="font-weight: normal;"> - </label>
+					<br/>					
+				</div>
+
+				<div id="routeBuildTools" style="display: none;"> 
+					<hr/>
+					<button class="buttonBasic" style="margin-bottom: 20px;" onclick="addToTotalRoute()">Zur Route hinzugeben</button>
+					<button class="buttonBasic" onclick="deleteUntilThis()">Bis hier löschen</button>
+					<button class="buttonBasic" onclick="resetRouteBuild()">Routeaufbau neustarten</button>
+					<br/>
+
+					<form id="whichRoute" style="display:inline; margin-left: 20px;"> Zeige
+						<input type="radio" name="infoSelector" class="largerRadios" value="actual" onclick="refreshDisplay()"> aktuelle
+						<input type="radio" name="infoSelector" class="largerRadios" value="total" onclick="refreshDisplay()" checked > gesamte
+						Strecke an						
+					</form>					
+
+					<button class="buttonBasic" style="margin-left: 100px;">KML herunterladen</button>					
+				</div>
+			</div>
+
+		</div>
+		<!-- the Chart part -->
+		<div id="chart" class="hmChart">
+		</div>		
+		<script src="js/uiUtils.js" type="text/javascript"></script>
+		<script src="js/controlPanelFunctions.js" type="text/javascript"></script>
+		<script src="js/hmChartUtils.js" type="text/javascript"></script>
+		<script src="js/routeSearchFunctions.js" type="text/javascript"></script>
+		<script src="js/languageUtils.js" type="text/javascript"></script>
+	</body>
+</html>

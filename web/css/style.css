@@ -1,0 +1,199 @@
+
+
+.jumbotron-Eagles{
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left: 3px;
+	padding-right: 3px;
+	margin-bottom: 3px;
+	color:white;
+	background-color:rgb(0,72,81);
+}
+
+.navbar {
+	background-color:rgb(0,72,81);	
+	list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.navbar-button {
+	background-color:rgb(0,72,81);
+	width: 150px;
+	color:white;
+	font-family: arial;
+	float: left;
+	display: block;
+	text-align: center;
+	margin: 0;
+    padding: 14px 16px;    
+	border-right: 1px solid rgb(141,144,147);
+}
+
+.navbar-active{
+	background-color:rgb(100,150,150);
+	color:rgb(0,72,81);
+}
+
+.notLink {
+	color: white;
+	text-decoration: none;
+}
+
+.navbar-button:hover:not(.navbar-active) {
+	background-color: rgb(0,86,97);
+}
+
+.header {
+	height: 100%;
+	width: 100%;
+	background-color: white;
+}
+
+.header-title {
+	text-align: center;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	font-family: arial;
+}
+
+.indexPage{
+	background-image: url("web/images/forest.JPG");
+	background-size: cover;
+	margin-top: 3px;
+	padding: 20px 7px 20px 7px;
+}
+
+.indexTextBox {
+	background-color: rgba(140,200,200, 0.9);
+	padding: 5px 10px 5px 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	border-radius: 10px;
+	font-family: arial;
+	font-size: 20px;
+	color: rgb(0,36,40);	
+}
+
+#webmaster {
+	width: 200px;
+	/*float: left;*/
+	transform: rotate(270deg);	
+}
+
+
+.container {
+	display: grid;
+	grid-template-columns: auto auto;  
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 15px;    
+}  
+.myH1 {
+	text-align: center; 
+	margin:0px;
+	font-variant-caps: small-caps;
+	font-weight: bolder;
+	font-size: 36px;
+}
+.floating-box {
+    display: inline-block;
+    width: 100%;
+    height: 600px;
+    margin: 0px;     
+}
+
+.languageSelector {
+	float: right;
+	color: white;
+	font-family: arial;	
+	font-size: 18px;
+	height: 100%;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+#language {
+	background-color:rgb(200,200,200);
+	color:rgb(0,72,81);
+	font-size: 16px;
+	margin-left: 10px;
+	height: 25px;
+	font-family: arial;
+}
+
+.controlPanel {
+	background-color: rgb(224, 224, 240);
+	color: rgb(20, 41, 82);
+	border-style: groove;
+	border-color: rgb(202, 202, 216);
+	border-width: 5px;
+	border-radius: 20px;
+	margin-left: 0px;
+	font-family: arial;
+	font-size: 18px;
+}
+
+#routeInfo {
+	margin-left: 10px;
+	line-height: 1.5;	
+	margin-bottom: 10px;
+}
+
+#map {
+	height:600px;
+}
+
+.buttonBasic {
+	background-color: rgb(20, 41, 82);
+	margin-left: 7px;
+	margin-right:20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	color: white;
+	font-size: 18px;
+	border-radius: 5px;
+	padding: 7px;	
+}
+
+.hmChart {
+	border-style: groove;
+	border-color: rgb(20, 41, 82);
+	border-width: 5px;
+	margin:20px;
+	border-radius: 10px;
+
+}
+
+.largerCheckbox {
+	width: 25px;
+	height: 25px;
+}
+
+.largerRadios {
+	width: 20px;
+	height: 20px;
+}
+
+.largerNumberInput {
+	width: 50px;
+	height: 20px;
+}
+
+.kontaktLabel {
+
+
+}
+
+.kontaktInput {
+	margin-top: 20px;
+	margin-left: 30px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	width: 200px;
+	height: 20px;
+
+}
