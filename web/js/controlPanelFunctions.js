@@ -58,11 +58,15 @@ function giveSummedEle(edgeArray, data) {
 	return summedEle;
 }
 
-function checkAndSubmit() {
+function prepareAndSubmit() {
 	if (totalRoute.length === 0) {
 		alert("Noch keine Route aufgebaut");
 	} else {
-		document.getElementById("pathArray").value = totalRoute;
+		var passedArray = [];
+		for (var edge of totalRoute) {
+			passedArray.push(edge);
+		}
+		document.getElementById("pathArray").value = passedArray;
 		var form = document.getElementsById("kmlDownloader");
 		form.submit();
 	}

@@ -202,10 +202,10 @@ and open the template in the editor.
 						<input type="radio" name="infoSelector" class="largerRadios" value="total" onclick="refreshDisplay()" checked > gesamte
 						Strecke an						
 					</form>					
-					<form id="kmlDownloader" action="kmlStitcher">
-						<input type="hidden" name="path" id="pathArray"/>
-						<button type="submit" value="submit" onclick="checkAndSubmit()" class="buttonBasic" style="margin-left: 100px;">KML herunterladen</button>
-					</form>					
+					<form id="kmlDownloader" action="kmlStitcher" method="POST" style="float: right;">						
+						<button type="submit" value="submit" onclick="prepareAndSubmit()" class="buttonBasic" style="margin-right: 100px; margin-top: 0px;">KML herunterladen</button>
+						<input type="hidden" name="pathArray" id="pathArray"/>
+					</form>	
 				</div>
 			</div>
 
