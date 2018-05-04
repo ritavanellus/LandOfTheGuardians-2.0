@@ -57,125 +57,91 @@ and open the template in the editor.
 		</div>
 
 		<!-- end of the NavBar here -->
-
-		<!-- TODO: add Images, find solution to move through quickly (button on lower line? alternative grid view?) -->
-		<div>
-			<!-- Images used to open the lightbox -->
-			<div class="row">
-				<div class="column">
-					<img src="images/gallery/20180408_174857.jpg" alt="" onclick="openModal();currentSlide(1)" width="300" class="hover-shadow">
-				</div>
-				<div class="column">
-					<img src="images/gallery/IMG_7175.JPG" alt="" onclick="openModal();currentSlide(2)" width="300" class="hover-shadow">
-				</div>
-				<div class="column">
-					<img src="images/gallery/IMG_7200.JPG" alt="" onclick="openModal();currentSlide(3)" width="300" class="hover-shadow">
-				</div>
-				<div class="column">
-					<img src="images/gallery/IMG_7254.JPG" alt="" onclick="openModal();currentSlide(4)" width="300" class="hover-shadow">
-				</div>
+		<div id="galleryContainer">
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/csalitiHaz.JPG">
+					<img src="images/gallery/csalitiHaz.JPG" alt="village house" class="bigImage">
+				</a>
+				<div class="desc">Csaliti Gasthaus, Farkasfa</div>
 			</div>
-
-			<!-- The Modal/Lightbox -->
-			<div id="myModal" class="modal">
-				<span class="close cursor" onclick="closeModal()">&times;</span>
-				<div class="modal-content">
-
-					<div class="mySlides">
-						<div class="numbertext">1 / 4</div>
-						<img src="images/gallery/20180408_174857.jpg" alt="" style="width:100%">
-					</div>
-
-					<div class="mySlides">
-						<div class="numbertext">2 / 4</div>
-						<img src="images/gallery/IMG_7175.JPG" alt="" style="width:100%">
-					</div>
-
-					<div class="mySlides">
-						<div class="numbertext">3 / 4</div>
-						<img src="images/gallery/IMG_7200.JPG" alt="" style="width:100%">
-					</div>
-
-					<div class="mySlides">
-						<div class="numbertext">4 / 4</div>
-						<img src="images/gallery/IMG_7254.JPG" alt="" style="width:100%">
-					</div>
-
-					<!-- Next/previous controls -->
-					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-					<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-					<!-- Caption text -->
-					<div class="caption-container">
-						<p id="caption"></p>
-					</div>
-
-					<!-- Thumbnail image controls -->
-					<div class="column">
-						<img src="images/gallery/20180408_174857.jpg" onclick="currentSlide(1)" alt="Nature" width="250">
-					</div>
-
-					<div class="column">
-						<img src="images/gallery/IMG_7175.JPG" onclick="currentSlide(2)" alt="Trolltunga" width="250">
-					</div>
-
-					<div class="column">
-						<img src="images/gallery/IMG_7200.JPG" onclick="currentSlide(3)" alt="Mountains" width="250">
-					</div>
-
-					<div class="column">
-						<img src="images/gallery/IMG_7254.JPG" onclick="currentSlide(4)" alt="Lights" width="250">
-					</div>
-				</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/harsas_to.JPG">
+					<img src="images/gallery/harsas_to.JPG" alt="lake" class="bigImage">
+				</a>
+				<div class="desc">Harsas-see, nähe Szentgotthard</div>
 			</div>
-
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/harsas_ut.JPG">
+					<img src="images/gallery/harsas_ut.JPG" alt="path on lakeside" class="bigImage">
+				</a>
+				<div class="desc">Spazierweg beim Harsas-see</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/hatarorMuzeum.JPG">
+					<img src="images/gallery/hatarorMuzeum.JPG" alt="museum" class="bigImage">
+				</a>
+				<div class="desc">Grenzschutzmuseum, Apatistvanfalva</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/hatarorok.JPG">
+					<img src="images/gallery/hatarorok.JPG" alt="borderguards" class="bigImage">
+				</a>
+				<div class="desc">Grenzschutzmuseum, Apatistvanfalva</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/fertoToBoat.JPG">
+					<img src="images/gallery/fertoToBoat.JPG" alt="russian boat" class="bigImage">
+				</a>
+				<div class="desc">Altes Grenzschutzboat</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/ketvolgy_kilato.JPG">
+					<img src="images/gallery/ketvolgy_kilato.JPG" alt="tower" class="bigImage">
+				</a>
+				<div class="desc">Ketvolgy, Aussichtsturm</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/orfalu_haranglab.JPG">
+					<img src="images/gallery/orfalu_haranglab.JPG" alt="belltower" class="bigImage">
+				</a>
+				<div class="desc">Orfalu Glockenturm</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/apatistvanfalva_emelkedo.JPG">
+					<img src="images/gallery/apatistvanfalva_emelkedo.JPG" alt="Apatistvanfalva" class="bigImage">
+				</a>
+				<div class="desc">Apatistvanfalva</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/utresz_AIF_elott.JPG">
+					<img src="images/gallery/utresz_AIF_elott.JPG" alt="road" class="bigImage">
+				</a>
+				<div class="desc">Weg</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/vingaszHaz.JPG">
+					<img src="images/gallery/vingaszHaz.JPG" alt="village house" class="bigImage">
+				</a>
+				<div class="desc">Vingasz-haz (Gasthaus), Farkasfa</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/hammock.jpg">
+					<img src="images/gallery/hammock.jpg" alt="hammock" class="bigImage">
+				</a>
+				<div class="desc">Relax</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/tent.jpg">
+					<img src="images/gallery/tent.jpg" alt="tent" class="bigImage">
+				</a>
+				<div class="desc">Zelten ist auch möglich</div>
+			</div>
+			<div class="gallery">
+				<a target="_blank" href="images/gallery/hatar_kapolna.JPG">
+					<img src="images/gallery/hatar_kapolna.JPG" alt="chapel" class="bigImage">
+				</a>
+				<div class="desc">Kapelle an der slowenischen Grenze</div>
+			</div>
 		</div>
-		<script>
-// Open the Modal
-			function openModal() {
-				document.getElementById('myModal').style.display = "block";
-			}
-
-// Close the Modal
-			function closeModal() {
-				document.getElementById('myModal').style.display = "none";
-			}
-
-			var slideIndex = 1;
-			showSlides(slideIndex);
-
-// Next/previous controls
-			function plusSlides(n) {
-				showSlides(slideIndex += n);
-			}
-
-// Thumbnail image controls
-			function currentSlide(n) {
-				showSlides(slideIndex = n);
-			}
-
-			function showSlides(n) {
-				var i;
-				var slides = document.getElementsByClassName("mySlides");
-				var dots = document.getElementsByClassName("demo");
-				var captionText = document.getElementById("caption");
-				if (n > slides.length) {
-					slideIndex = 1
-				}
-				if (n < 1) {
-					slideIndex = slides.length
-				}
-				for (i = 0; i < slides.length; i++) {
-					slides[i].style.display = "none";
-				}
-				for (i = 0; i < dots.length; i++) {
-					dots[i].className = dots[i].className.replace(" active", "");
-				}
-				slides[slideIndex - 1].style.display = "block";
-				dots[slideIndex - 1].className += " active";
-				captionText.innerHTML = dots[slideIndex - 1].alt;
-			}
-		</script>
-
 	</body>
 </html>
