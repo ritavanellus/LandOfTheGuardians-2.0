@@ -74,7 +74,7 @@ public class kmlStitcher extends HttpServlet {
 		System.out.println("absolutePath: "+absolutePath);
 		File target= new File (absolutePath);*/
 		try {
-			Object obj = parser.parse(new FileReader("C:\\Users\\Rita\\Documents\\NetBeansProjects\\LandOfTheGuardians\\web\\jsons\\test_All.json"));
+			Object obj = parser.parse(new FileReader("C:\\Users\\Rita\\Documents\\NetBeansProjects\\LandOfTheGuardians\\web\\jsons\\Phase1.json"));
 
 			bigObj = (JSONObject) obj;
 

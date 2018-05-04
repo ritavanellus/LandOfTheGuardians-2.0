@@ -67,7 +67,7 @@
 
 .indexTextBox {
 	background-color: rgba(140,200,200, 0.9);
-	padding: 5px 10px 5px 10px;
+	padding: 5px 10px 15px 10px;
 	margin-left: 5px;
 	margin-right: 5px;
 	margin-bottom: 20px;
@@ -79,9 +79,14 @@
 }
 
 #webmaster {
-	width: 200px;
+	width: 150;
 	/*float: left;*/
 	transform: rotate(270deg);	
+	border-color: rgb(0,72,81);
+	border-width: 3px;
+	border-style: solid;
+	border-radius:5px;
+	margin-bottom: 5px;
 }
 
 

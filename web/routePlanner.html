@@ -15,7 +15,7 @@ and open the template in the editor.
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
 		<script src="https://code.highcharts.com/highcharts.js"></script>
 		<script src="https://code.highcharts.com/modules/exporting.js"></script>
-		<!-- <script src="https://code.highcharts.com/modules/boost.js"></script> -->				
+		<script src="https://code.highcharts.com/modules/boost.js"></script>				
 	</head>
 	<body>
 		<div class="jumbotron-Eagles">
@@ -75,7 +75,7 @@ and open the template in the editor.
 
 				var routeBildActive = false;
 				var showTotalActive = true;
-				var routeAddEnabled = true;
+				var routeAddEnabled = false;
 
 				var multipleWays = [];
 				var actRouteIndex = 0;
@@ -85,6 +85,8 @@ and open the template in the editor.
 				var activeTotalPolyline = [];
 				var totalRoute = [];
 				var rtsWithTotal = false;
+				
+				var jsonSource = "jsons/Phase1.json";
 
 
 				function initMap() {
@@ -106,7 +108,7 @@ and open the template in the editor.
 
 
 					//displaying the node points
-					$.getJSON("jsons/test_All.json", function (jsonData) {
+					$.getJSON(jsonSource, function (jsonData) {
 						for (section in jsonData) {
 							var start = section.substring(0, 3);
 							if (allWayPoints[start] === undefined) {

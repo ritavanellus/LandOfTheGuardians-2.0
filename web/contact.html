@@ -64,34 +64,40 @@ and open the template in the editor.
 		<div class="bigContainer">
 			<div>
 				<h2>
-					Die Seite wird ständig verbessert, deshalb sind Ihre Meinung und Erfahrungen uns wichtig. <br/>
-					Bitte füllen Sie die Kontaktformular aus, und wir werden Ihnen baldmöglichst antworten. 
+					Meinung? Vorschläge? Wünsche? Bitte teilen Sie sie mit! <br/>
+					Damit können Sie zur Verbesserung der Seite beiträgen. Vielen Dank im Voraus!					 
 				</h2>
 
 			</div>
 			<div class="grid grid-pad">
 				<div class="col-3-12">
-					<div class="content">
+					<div>
 						<img src="images/telephone_cut.JPG" alt="telefon" height="400" />
+						Grenzschutz-Telefon von den Eiserne Vorhang-Zeiten. Grenzschutzmuseum, Apatistvanfalva. 
 					</div>
 				</div>
 				<div class="col-9-12">
-					<div class="content">
-						<form>
+					<div>
+						<form class="form">
 							<h2> Kontaktformular </h2>
+							* Pflichtfelder <br/> 
+							<br/>
 							<div >
-								<label for="userName"> Name </label><input type="text" id="userName" class="kontaktInput"/>* <br/>
-								<label for="userCountry"> Land </label><input type="text" id="userCountry" class="kontaktInput"/> <br/>
-								<label for="userEmail"> Emailadresse </label><input type="email" id="userEmail" class="kontaktInput"/>* <br/>
-								<label for="subject"> Betreff </label> <input type="text" id="subject" class="kontaktInput"/> <br/>
-								<label for="message"> Nachricht </label><textarea id="message" class="kontaktInput"> </textarea> *<br/>
+								<label for="userName"> Name* </label> <br/>
+								<input type="text" id="userName" class="kontaktInput" placeholder="Ihre Name"/> <br/>
+								<label for="userCountry"> Land </label> <br/>
+								<input type="text" id="userCountry" class="kontaktInput" placeholder="Ihr Land"/> <br/>
+								<label for="userEmail"> Emailadresse* </label> <br/>
+								<input type="email" id="userEmail" class="kontaktInput" placeholder="Ihre Emailadresse"/> <br/>
+								<label for="subject"> Betreff* </label> <br/>
+								<input type="text" id="subject" class="kontaktInput" placeholder="Betreff"/> <br/>
+								<label for="message"> Nachricht* </label> <br/>
+								<textarea id="message" class="kontaktInput" style="height:100px" placeholder="Ihre Nachricht"> </textarea> <br/>
 							</div>
-
-
-							<div>* Pflichtfelder </div> <br/> 
+							<br/> 
 							<div id="messages" style="display:none;"> </div>
 
-							<button id="send" class="buttonBasic"> Nachricht einsenden </button>					
+							<button id="send" class="buttonSubmit"> Nachricht einsenden </button>					
 
 						</form>	
 

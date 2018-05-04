@@ -4,6 +4,30 @@
  * and open the template in the editor.
  */
 
+//original, keeps th eobject structure
+//function sumDataForChart(edgeArray, data) {
+//	var summedData = [];
+//	var incr = 0;
+//	for (var section of edgeArray) {
+//		var xyPairs = data[section].forChart;
+//		for (var i = 0; i < xyPairs.length; i++) {
+//			var object = xyPairs[i];
+//			object.x += incr;
+//			summedData.push(object);
+//			if (i === xyPairs.length - 1) {
+//				incr = xyPairs[i].x;
+//			}
+//		}
+//	}
+//	return summedData;
+//}
+
+function precisionRound(number, precision) {
+	var factor = Math.pow(10, precision);
+	return Math.round(number * factor) / factor;
+}
+
+//copy, makes a 2D array from objects
 function sumDataForChart(edgeArray, data) {
 	var summedData = [];
 	var incr = 0;
@@ -11,17 +35,20 @@ function sumDataForChart(edgeArray, data) {
 		var xyPairs = data[section].forChart;
 		for (var i = 0; i < xyPairs.length; i++) {
 			var object = xyPairs[i];
-			object.x += incr;
-			summedData.push(object);
-			if (i === xyPairs.length - 1) {
-				incr = xyPairs[i].x;
+			var xP = object.x;
+			//xP = precisionRound(xP, 4);
+			xP += incr;
+			var yP = object.y;
+			//yP = precisionRound(yP, 2);
+			summedData.push([xP, yP]);
+			if (i === (xyPairs.length - 1)) {
+				incr += xyPairs[i].x;
+				//incr = precisionRound(incr, 4);
 			}
 		}
 	}
 	return summedData;
 }
-
-
 
 function createPlotlines(edgeArray, data) {
 	var plotlines = [];
@@ -61,7 +88,7 @@ function createPlotlines(edgeArray, data) {
 	return plotlines;
 }
 
-function plotChart (edgeArray, summedData, data) {
+function plotChart(edgeArray, summedData, data) {
 
 	var myChart = Highcharts.chart('chart', {
 
@@ -71,10 +98,10 @@ function plotChart (edgeArray, summedData, data) {
 			panning: true,
 			panKey: 'shift'
 		},
-		/*boost: {
-			enabled: false ,
+		boost: {
+			enabled: false,
 			useGPUTranslations: true
-		},*/
+		},
 		title: {
 			text: data[edgeArray[0]].startPoint + " - " + data[edgeArray[edgeArray.length - 1]].endPoint
 		},
@@ -94,16 +121,16 @@ function plotChart (edgeArray, summedData, data) {
 		legend: {
 			enabled: false
 		},
-		plotOptions: {
-			series: {
-				label: {
-					connectorAllowed: false
-				}
-			}
-		},
+		/*plotOptions: {
+		 series: {
+		 label: {
+		 connectorAllowed: false
+		 }
+		 }
+		 },*/
 		series: [{
-				/*boostThreshold: 500,*/
-				/*turboThreshold: 50000,*/
+				boostThreshold: 50,
+				turboThreshold: 50000,
 				name: "summed Route",
 				data: summedData,
 				color: "rgb(0,72,81)",
